@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="myApp.properties"/>
+     <bean id="myPet"
+           class="org.kalinin.spring.spring_introduction.Cet">
+     </bean>
+     <bean id="myPerson"
+           class="org.kalinin.spring.spring_introduction.Person">
+<!--          <constructor-arg ref="myPet"/>  это конструктор с параметрами-->
+          <property name="pet" ref="myPet"/>
+          <property name="surname" value="${Person.surname}"/>
+          <property name="age" value="${Person.age}"/>
+     </bean>
+
+
+</beans>
